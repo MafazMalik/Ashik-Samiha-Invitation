@@ -9,6 +9,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&family=Amiri&display=swap"
         rel="stylesheet">
+    <link rel="preload" as="image" href="./asset/image/couple-stand.png">
 
     <style>
         * {
@@ -478,8 +479,15 @@
             width: 725px;
             height: auto;
             left: 50%;
-            transform: translateX(-50%)
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.8s ease;
         }
+
+        .bottom-fixed-img.show {
+            opacity: 1;
+        }
+
 
         @keyframes stampPress {
             0% {
@@ -663,6 +671,12 @@
                 invite.classList.add("show");
             }, 1000);
         }
+
+        const fixedImg = document.querySelector(".bottom-fixed-img");
+
+        fixedImg.onload = function () {
+            fixedImg.classList.add("show");
+        };
 
         // COUNTDOWN TIMER
         const eventDate = new Date("April 26, 2026 12:30:00").getTime();
