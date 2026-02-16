@@ -76,6 +76,27 @@
                 0 -10px 20px rgba(0, 0, 0, 0.25);
         }
 
+        .bottom-ayah {
+            position: absolute;
+            bottom: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            font-family: 'Amiri', serif;
+            color: #ffffff;
+            pointer-events: none;
+        }
+
+        .bottom-ayah .line1 {
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .bottom-ayah .line2 {
+            font-size: 12px;
+            margin-top: 4px;
+        }
+
         /* slight open feel when envelope opens */
         .envelope.open .bottom-flap {
             transform: rotateX(-10deg);
@@ -223,6 +244,39 @@
             pointer-events: none;
         }
 
+        .flap-names {
+            position: absolute;
+            top: 28%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 50;
+            pointer-events: none;
+        }
+
+        /* force cursive on each line */
+        .flap-names .line1,
+        .flap-names .line2,
+        .flap-names .line3 {
+            font-family: 'Great Vibes', cursive !important;
+            color: #f7e7b0;
+            text-shadow: 0 3px 8px rgba(0, 0, 0, 0.7);
+            line-height: 1.05;
+        }
+
+        .flap-names .line1 {
+            font-size: 46px;
+        }
+
+        .flap-names .line2 {
+            font-size: 32px;
+            margin: 4px 0;
+        }
+
+        .flap-names .line3 {
+            font-size: 46px;
+        }
+
         /* Slow hinge open feel */
         .envelope.open .flap {
             transform: rotateX(22deg);
@@ -332,7 +386,7 @@
             margin: auto;
             background: #ffffff;
             border-radius: 22px;
-            padding: 35px 25px;
+            padding: 35px 25px 350px 25px;
             box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
             text-align: center;
         }
@@ -358,7 +412,7 @@
             font-family: 'Great Vibes', cursive;
             font-size: 46px;
             font-weight: normal;
-            color: #000;
+            color: #d4af37;
             margin: 12px 0;
             letter-spacing: 1px;
         }
@@ -382,13 +436,17 @@
             margin: 18px 0;
         }
 
-        .couple-img {
-            width: 190px;
-            height: 190px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 6px solid #d4af37;
-            margin: 25px auto;
+        .countdown-line {
+            text-align: center;
+            margin-top: 20px;
+            font-family: 'Amiri', serif;
+            font-size: 20px;
+            font-weight: 500;
+            color: #1f355e;
+
+            background: linear-gradient(120deg, #fff8dc, #f3e1a6);
+            padding: 10px 16px;
+            letter-spacing: 1px;
         }
 
         a {
@@ -414,7 +472,14 @@
             animation: stampPress 0.45s ease forwards;
         }
 
-
+        .bottom-fixed-img {
+            position: fixed;
+            bottom: -10px;
+            width: 725px;
+            height: auto;
+            left: 50%;
+            transform: translateX(-50%)
+        }
 
         @keyframes stampPress {
             0% {
@@ -443,7 +508,12 @@
 
             /* NEW — mobile text scaling */
             .card {
-                padding: 25px 18px;
+                margin: 0;
+                padding: 25px 18px 350px 18px;
+            }
+
+            .invitation {
+                padding: 0;
             }
 
             .arabic {
@@ -471,9 +541,13 @@
                 font-size: 12px;
             }
 
-            .couple-img {
+            /* .couple-img {
                 width: 160px;
                 height: 160px;
+            } */
+
+            .bottom-fixed-img {
+                width: 680px;
             }
         }
     </style>
@@ -485,8 +559,20 @@
         <div class="flash" id="flash"></div>
 
         <div class="envelope" id="envelope">
-            <div class="flap"></div>
-            <div class="bottom-flap"></div>
+            <div class="flap">
+                <div class="flap-names">
+                    <div class="line1">Asik</div>
+                    <div class="line2">&</div>
+                    <div class="line3">Samiha</div>
+                </div>
+            </div>
+
+            <div class="bottom-flap">
+                <div class="bottom-ayah">
+                    <div class="line1">And we created you in pairs</div>
+                    <div class="line2">Quran 78:8</div>
+                </div>
+            </div>
 
             <div class="side-fold left-fold"></div>
             <div class="side-fold right-fold"></div>
@@ -501,14 +587,14 @@
         <div class="card">
             <div class="arabic">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</div>
             <div class="meaning">In the name of Allah, The Most Beneficent, The Most Merciful</div>
-            <div class="text bold">Mr. M.Sheik & Mrs. A.Shajeela</div>
+            <div class="text bold">Mr. M.Sheik Mohammed & Mrs. A.Shajeela</div>
             <div class="text">Baithulmal Nagar Virivakkam,<br>Parakkai Road, Kottar - 629002</div>
             <div class="text" style="margin-top:15px;">
                 Together with our family, We Cordially invite you to grace us
                 with your esteemed presence on the Nikkah of our beloved son.
             </div>
 
-            <div class="name">S. Mohamed Asik</div>
+            <div class="name">S. Mohammed Asik</div>
             <div class="text">
                 Grand s/o Late, Mr. Mohammad Mydeen & Mrs. Fathima Beevi<br>
                 Late, Mr. Babujan Bhai & Mrs. Asma Beevi
@@ -523,7 +609,9 @@
                 Baithulmal Nagar, Kottar Nagercoil
             </div>
 
-            <img src="./asset/image/couple.jpeg" class="couple-img">
+            <div id="countdown" class="countdown-line">
+                Loading countdown...
+            </div>
 
             <div class="event-box">
                 <div class="bold">26th April 2026</div>
@@ -538,16 +626,17 @@
                 <a href="https://maps.google.com?q=Michael+Mahal+Vedhanagar" target="_blank">📍 View Location</a>
             </div>
 
-            <div class="text">📞 <a href="tel:9791389934">9791389934</a></div>
+            <div class="text">📞 <a href="tel:9791389934">9791389943</a></div>
 
             <div class="footer">
-                With warm regards from <b>Aseem & Safrin</b>
+                With warm regards from <br> <b>Aseem & Safrin</b>
             </div>
 
-            <div class="ayah">
+            <!-- <div class="ayah">
                 “And we created you in pairs” – Quran 78:8
-            </div>
+            </div> -->
         </div>
+        <img src="./asset/image/couple-stand.png" class="bottom-fixed-img">
     </div>
 
     <script>
@@ -574,6 +663,31 @@
                 invite.classList.add("show");
             }, 1000);
         }
+
+        // COUNTDOWN TIMER
+        const eventDate = new Date("April 26, 2026 12:30:00").getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const gap = eventDate - now;
+
+            if (gap <= 0) {
+                document.getElementById("countdown").innerHTML = "Nikah Started";
+                return;
+            }
+
+            const d = Math.floor(gap / (1000 * 60 * 60 * 24));
+            const h = Math.floor((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((gap % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML =
+                d + " days " + h + " hrs " + m + " mins " + s + " sec";
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
     </script>
 
 </body>
