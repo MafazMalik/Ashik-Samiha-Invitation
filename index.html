@@ -64,7 +64,7 @@
             width: 100%;
             height: 100%;
 
-            background: url("./asset/image/paper\ mobile\ 2.png");
+            background: url("./asset/image/paper\ mobile\ 3.png");
             background-size: cover;
             background-position: center;
 
@@ -126,7 +126,7 @@
 
         .left-fold {
             left: 0;
-            background: url("./asset/image/paper\ square.png");
+            background: url("./asset/image/paper\ square\ 2.png");
             background-size: cover;
             background-position: 18%;
 
@@ -136,7 +136,7 @@
 
         .right-fold {
             right: 0;
-            background: url("./asset/image/paper\ square.png");
+            background: url("./asset/image/paper\ square\ 2.png");
             background-size: cover;
             background-position: 85%;
 
@@ -168,7 +168,7 @@
             width: 100vw;
             height: 100vh;
 
-            background: url("./asset/image/paper square.png");
+            background: url("./asset/image/paper\ square\ 2.png");
             background-size: cover;
             background-position: center;
 
@@ -220,7 +220,7 @@
             width: 100%;
             height: 100%;
 
-            background: url("./asset/image/paper\ mobile\ 2.png");
+            background: url("./asset/image/paper\ mobile\ 3.png");
             background-size: cover;
             background-position: 25% 25%;
 
@@ -310,8 +310,28 @@
 
             transition: 1.2s cubic-bezier(.22, .61, .36, 1);
 
-            filter:
-                drop-shadow(0 15px 25px rgba(0, 0, 0, 0.45)) drop-shadow(0 3px 5px rgba(255, 255, 255, 0.25));
+            /* RESET BUTTON DEFAULT STYLE */
+            background: transparent;
+            border: none;
+            outline: none;
+            padding: 0;
+            appearance: none;
+            -webkit-appearance: none;
+
+            /* REMOVE TAP HIGHLIGHT */
+            -webkit-tap-highlight-color: transparent;
+
+            /* REMOVE FOCUS GLOW */
+            box-shadow: none;
+        }
+
+        .stamp:focus {
+            outline: none;
+            box-shadow: none;
+        }
+
+        .stamp:active {
+            transform: translate(-50%, -50%) scale(0.95);
         }
 
         .stamp img {
@@ -387,7 +407,7 @@
             margin: auto;
             background: #ffffff;
             border-radius: 22px;
-            padding: 35px 25px 350px 25px;
+            padding: 35px 25px 430px 25px;
             box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
             text-align: center;
         }
@@ -517,7 +537,8 @@
             /* NEW — mobile text scaling */
             .card {
                 margin: 0;
-                padding: 25px 18px 350px 18px;
+                border-radius: 0;
+                padding: 25px 18px 430px 18px;
             }
 
             .invitation {
@@ -585,9 +606,9 @@
             <div class="side-fold left-fold"></div>
             <div class="side-fold right-fold"></div>
 
-            <div class="stamp" onclick="openInvite()">
+            <button class="stamp" onclick="openInvite()">
                 <img src="./asset/image/button-white.png" alt="Open Invitation">
-            </div>
+            </button>
         </div>
     </div>
 
