@@ -10,6 +10,7 @@
         href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&family=Amiri&display=swap"
         rel="stylesheet">
     <link rel="preload" as="image" href="./asset/image/couple-stand.png">
+    <link rel="preload" as="image" href="./asset/image/couple-stand.png" fetchpriority="high">
 
     <style>
         * {
@@ -695,9 +696,13 @@
 
         const fixedImg = document.querySelector(".bottom-fixed-img");
 
-        fixedImg.onload = function () {
+        if (fixedImg.complete) {
             fixedImg.classList.add("show");
-        };
+        } else {
+            fixedImg.onload = function () {
+                fixedImg.classList.add("show");
+            };
+        }
 
         // COUNTDOWN TIMER
         const eventDate = new Date("April 26, 2026 12:30:00").getTime();
